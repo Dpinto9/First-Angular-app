@@ -1,21 +1,23 @@
-<div *ngFor="let post of userPosts">
-    <h2>{{ post.user }}</h2>
-    <p>{{ post.content }}</p>
+<div class="posts-container">
+    <div *ngFor="let post of userPosts" class="post">
+        <h2>{{ post.user }}</h2>
+        <p>{{ post.content }}</p>
 
-    <div>
-        <button (click)="likePost(post.id)">
-            {{ likedPosts.has(post.id) ? 'Unlike' : 'Like' }}
-        </button>
-        <span *ngIf="likedPosts.has(post.id)">You liked this post!</span>
-    </div>
-    
-    <div class="">
-        <ul>
-            <li *ngFor="let comment of post.comments">
-                {{ comment }}
-            </li>
-        </ul>
-        <input placeholder="Add a comment" [(ngModel)]="newComment">
-        <button (click)="addComment(post.id)">Post</button>
+        <div class="actions">
+            <button (click)="likePost(post.id)">
+                {{ likedPosts.has(post.id) ? 'Unlike' : 'Like' }}
+            </button>
+            <span *ngIf="likedPosts.has(post.id)">You liked this post!</span>
+        </div>
+        
+        <div class="comments-section">
+            <ul>
+                <li *ngFor="let comment of post.comments">
+                    {{ comment }}
+                </li>
+            </ul>
+            <input placeholder="Add a comment" [(ngModel)]="newComment">
+            <button (click)="addComment(post.id)">Post</button>
+        </div>
     </div>
 </div>
