@@ -1,0 +1,25 @@
+<!-- <div *appRoleBasedAcess="'Admin'" class="">
+    <button>Edit User Settings</button>
+    <button>Manage Content</button>
+</div>
+
+<div *appRoleBasedAcess="'Editor'" class="">
+    <button>Edit Post</button>
+    <button>Moderate Comments</button>
+</div>
+
+<div *appRoleBasedAcess="'User'" class="">
+    <p>Welcome, User!</p>
+</div> -->
+
+<nav>
+    <ul>
+      <li *appRoleBasedAccess="['Admin']">Admin Panel</li>
+      <li *appRoleBasedAccess="['Editor', 'Admin']">Editor Dashboard</li>
+      <li *appRoleBasedAccess="['User', 'Editor', 'Admin']">User Profile</li>
+    </ul>
+  </nav>
+
+<a routerLink="posts"> Posts</a>
+<br>
+<a routerLink="profile"> My Profile</a>

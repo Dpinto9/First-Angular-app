@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { PostsComponent } from './posts/posts.component';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { NavigationComponent } from './navigation/navigation.component';
+// import { PostsComponent } from './posts/posts.component';
 
 @Component({
   selector: 'app-root',
-  imports: [/*RouterOutlet,*/ PostsComponent],
+  imports: [/*RouterOutlet, PostsComponent,*/ NavigationComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
